@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+
+    {% block content%}
+
+        <form action="" method="POST" autocomplete="off">
+            {% csrf_token %}
+
+            {{form.as_p}}
+
+            <button type="submit" class="btn btn-primary"> Register Now</button>
+
+        </form>
+
+    {% endblock content%}

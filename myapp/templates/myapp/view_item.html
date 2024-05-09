@@ -1,0 +1,61 @@
+{% extends 'myapp/base.html' %}
+
+    {% block content %}
+    <br>
+    <br>
+
+        <div class="card card-bg-light">
+            <div class="card-head">
+
+                <strong style="display: inline-flex;">
+                    <br>
+                    &nbsp; &nbsp;
+                    <h3>{{item.last_name}}</h3>
+                    &nbsp; &nbsp;
+                    <h3>{{item.first_name}}</h3>
+                </strong>
+                
+
+            </div>
+            <div class="card-body">
+
+                <div style="display: flex;">
+                    <h5>ID:</h5>  &nbsp; &nbsp; 
+                    <p>{{item.id}}</p>
+                </div>
+
+                <div style="display: flex;">
+                    <h5>Phone:</h5> &nbsp; &nbsp;
+                    <p>{{item.phone_number}}</p>
+                </div>
+
+                <div style="display: flex;">
+                    <h5>Email:</h5> &nbsp; &nbsp;
+                    <p>{{item.email}}</p>
+                </div>
+
+                <div style="display: flex;">
+                    <h5>Address</h5> &nbsp; &nbsp;
+                    <p>{{item.address}}</p>
+                </div>
+
+                <div style="display: flex;">
+                    <h5> City:</h5> &nbsp; &nbsp;
+                    <p>{{item.city}}</p>
+                </div>
+
+                <div style="display: flex;">
+                    <h5>Country:</h5> &nbsp; &nbsp;
+                    <p>{{item.country}}</p>
+                </div>
+            </div>
+            <div class="card-footer">
+
+                <a href="{% url 'my_dashboard' %}" class="btn btn-primary">Back</a>
+                <a href="{% url 'update' item.id %}" class="btn btn-warning">Update</a>
+                <a href="{% url 'delete' item.id%}" class="btn btn-danger">Delete</a>
+
+            </div>
+        </div>
+
+    {% endblock content %}

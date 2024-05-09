@@ -1,0 +1,31 @@
+{% extends 'myapp/base.html' %}
+
+
+{% block content %}
+    <body class="container-fluid text-center">
+
+        <br>
+        <h1>
+            Hey there welcome to ProjectZ!!!!!!!
+        </h1>
+        <br>
+        <hr>
+        <br>
+        <h3>
+            Start to record all your records!, Today.
+        </h3>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <a href="{% url 'register' %}" class="btn btn-lg btn-primary"> 
+            Create account
+        </a>
+        <br>
+        <br>
+        <br>
+        
+    </body>
+
+
+{% endblock content%}

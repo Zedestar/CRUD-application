@@ -1,0 +1,60 @@
+{% extends 'myapp/base.html' %}
+
+    {% block content %}
+
+    <br>
+    <a href="{% url 'create_record' %}" class="btn btn-primary">Create record</a>
+    <br>
+    <hr>
+    {% if data %}
+        <table class="table table-bordered table-striped">
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th> Phone Number</th>
+                    <th> Email</th>
+                    <th> Address</th>
+                    <th> City </th>
+                    <th> Country</th>
+                    <th> Day Created</th>
+                    <th> View</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                {% for datum in data %}
+
+                    <tr>
+                        <td>{{datum.id}}</td>
+                        <td>{{datum.first_name}}</td>
+                        <td>{{datum.last_name}}</td>
+                        <td>{{datum.phone_number}}</td>
+                        <td>{{datum.email}}</td>
+                        <td>{{datum.address}}</td>
+                        <td>{{datum.city}}</td>
+                        <td>{{datum.country}}</td>
+                        <td>{{datum.day_created}}</td>
+                        <td><a href="{% url 'view_item' datum.id %}" class="btn btn-primary">View</a></td>
+
+                        
+                    </tr>
+                
+            {% endfor %}
+
+    {% else %}
+                    
+        <h1>
+            Sorry, There is no data found
+        </h1>
+
+    {% endif %}
+
+        </tbody>
+
+    </table>
+
+    {% endblock content %}

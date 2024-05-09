@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectZ</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/theme.css' %}">
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .card{
+            width: 50%;
+            margin-left: 25%;
+
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 20px 0;
+            height: 80px;
+    }
+    form{
+        position: relative;
+        width: 50%;
+        left: 25%;
+        background-color: rgb(73, 73, 153);
+        padding: 2%;
+        border-radius: 5%;
+    }
+    </style>
+</head>
+<body>
+    
+    {% include 'myapp/nav.html' %}
+
+    {% block content %}
+
+    {% endblock content %}
+
+    <!-- {% include 'myapp/footer.html' %} -->
+
+</body>
+</html>
